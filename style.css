@@ -15,45 +15,85 @@ body{
     background-color: #dee2e6;
     min-height: 100vh;
     font-family: 'Yanone Kaffeesatz', sans-serif;
+    display: flex;
+
 }
+
+/* container of all data and style */
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* left side style */
 .sidebar{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem;
     background-color: #f8f9fa;
     box-shadow: 0 2rem 2rem rgba(0,0,0,.15);
     width: 40rem;
     height: 100vh;
-    /* height: 8rem; */
+    transition: all .3s;
+    z-index: 2;
+    position: relative; /* for ❌ icon positioning */
 }
 
+@media only screen and (max-width: 40rem) {
+    .sidebar{
+        width: 100vw;
+        height: 100%;
+    }
+  }
+
+/* this property wil use while clicking ❌ or hamburger icon */
+.hidebar{
+   width:0;
+   overflow: hidden;
+   transition: all .5s;
+
+}
+
+/* 1st logo design and style */
 .tertiary-header{
     font-size: 6rem;
     color: #ee6c4d;
+    padding: 2rem;
 }
+
 .color{
     color:#2ec4b6 ;
 }
 
+/* reducing font size on small screen */
+@media only screen and (max-width: 50rem) {
+    .tertiary-header{
+        font-size: 3.5rem;
+        margin-top: 1.5rem;
+    }
+  }
 
 
+
+/* home and other links style and effect */
 .link-box{
     list-style: none;
     text-decoration: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* width: 35rem; */
+    margin-top: 3rem;
     transition: all .3s;
-    margin-top: 5rem;
-
-
+    width: 40rem;
+    padding: 0 3rem;
 
 }
 .link-box > * {
-    margin-bottom:2rem;
+    padding: 1rem 2rem;
     transition: all .3s;
 }
 .links:link,
@@ -61,23 +101,55 @@ body{
     text-decoration: none;
     color: #5c677d ;
     font-size: 3rem;
-    /* display: block; */
-
 }
-.link-box > *:hover{
+@media only screen and (max-width: 50rem) {
+    .links:link,
+    .links:visited{
+    font-size: 2.2rem;
+}
+  }
 
-    width: 100%;
-    padding: 1rem;
+.links:hover{
     background-color: #48cae4;
+    padding:  1rem 2rem;
+}
+
+.link-box > *:hover{
     transform: translateX(1rem);
     transition: all .3s;
 }
+
+
+
+
+
+
+
+/* the ❌  icon style and positioning*/
+.iconbox{
+margin-right: 2rem;
+position: absolute;
+top: 2%;
+right: 5%;
+}
+.cross-icon{
+    height: 5rem;
+    width: 5rem;
+    fill: red;
+}
+
+
+
+
+
+/* facebook and social link style and positioning */
+
 .social-icons{
     width: 20rem;
     display: flex;
     justify-content: space-between;
-  
     align-self: center;
+    margin-bottom: 2rem;
 }
 
 
@@ -88,60 +160,50 @@ body{
 
 }
 
-.show-links{
-    display: none;
+/* 🍔 hamburger icon style and positiong */
+
+.menubox{
+    margin-top: 2rem;
+}
+.menu-icon{
+    height: 3rem;
+    width: 3rem;
+    fill: #48cae4;
+    z-index: 1;
+    animation: popUp 1s ease-in-out;
+    animation-iteration-count: infinite;
+    margin-right: 5rem;
+
+   }
+
+/* reducing size for smaller screen */
+@media only screen and (max-width: 80rem) {
+    .menu-icon{
+        height: 3rem;
+        width: 3rem;
+    }
+    .menubox{
+        margin-right: 2rem;
+        right: 0;
+    }
+  }
+
+/* poping animation effect on 🍔 hamburger icon  */
+@keyframes popUp{
+    0% {
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
-@media only screen and (max-width: 90rem) {
-    .social-icons{
-        width: 20rem;
-    }
-  }
 
-  @media only screen and (max-width: 75rem) {
-    .link-box{
-        width: 25rem;
 
-    }
 
-  }
 
-  @media only screen and (max-width: 50rem) {
-    .navbar{
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 4rem;
-        /* height: auto; */
-    }
-    .link-box{
-        flex-direction: column;
-
-        justify-content: space-around;
-        height: 0;
-        overflow: hidden;
-
-    }
-    .links{
-        margin:2rem 0;
-
-    }
-    .show-links{
-        display:block;
-        position: absolute;
-        top: 2%;
-        right: 8%;
-        transition: all .3s;
-    }
-    .show-links:active{
-        transform: rotateZ(45deg);
-    }
-    .social-icons{
-        display: none;
-    }
-  }
-
-  .show-box{
-      height: 20rem;
-      padding:1rem 0;
-      transition: all .3s;
-  }

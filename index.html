@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,43 +8,63 @@
     <title>SideBar</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-<div class="sidebar">
-    <div class="logobox">
-        <h3 class="tertiary-header">Side <span class="color">Bar</span></h3>
-        
-        <ul class="link-box">
-            <li ><a href="#" class="links">Home</a></li>
-            <li ><a href="#" class="links">Catagory</a></li>
-            <li ><a href="#" class="links">Contact us</a></li>
-            <li ><a href="#" class="links">About Us</a></li>
-        </ul>
+    <div class="container">
+        <!-- leftside data -->
+        <div class="sidebar">
+
+            <!-- logo name and link are combined in one box for flex -->
+            <div class="logobox">
+                <h3 class="tertiary-header">Side <span class="color">Bar</span></h3>
+
+                <ul class="link-box">
+                    <li><a href="#" class="links link-item">Home</a></li>
+                    <li><a href="#" class="links link-item">Catagory</a></li>
+                    <li><a href="#" class="links link-item">Contact us</a></li>
+                    <li><a href="#" class="links link-item">About Us</a></li>
+                </ul>
+            </div>
+
+            <!-- ❌ icon box -->
+            <div class="iconbox">
+                <svg class="cross-icon">
+                    <use xlink:href='img/sprite.svg#icon-cross'></use>
+                </svg>
+            </div>
+
+
+
+            <!-- facebook twitter social icons are here -->
+            <div class="social-icons">
+                <svg class="icon">
+                    <use xlink:href='img/sprite.svg#icon-facebook-with-circle'></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href='img/sprite.svg#icon-linkedin-with-circle'></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href='img/sprite.svg#icon-twitter'></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href='img/sprite.svg#icon-youtube'></use>
+                </svg>
+            </div>
+        </div>
+        <!-- right side 🍔 icon -->
+        <div class="menubox">
+            <svg class="menu-icon">
+                <use xlink:href='img/sprite.svg#icon-menu'></use>
+            </svg>
+        </div>
     </div>
 
-    <div class="social-icons">
-        <svg class="icon">
-            <use xlink:href='img/sprite.svg#icon-facebook-with-circle'></use>
-        </svg>
-        <svg class="icon">
-            <use xlink:href='img/sprite.svg#icon-linkedin-with-circle'></use>
-        </svg>
-        <svg class="icon">
-            <use xlink:href='img/sprite.svg#icon-twitter'></use>
-        </svg>
-        <svg class="icon">
-            <use xlink:href='img/sprite.svg#icon-youtube'></use>
-        </svg>
-    </div>
-</div>
-<div class="show-links">
-    <svg class="icon">
-        <use xlink:href='img/sprite.svg#icon-menu'></use>
-    </svg>
-</div>
 
-<script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
